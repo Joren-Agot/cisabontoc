@@ -1,0 +1,2 @@
+    <!-- Link external CSS file -->
+    <link rel="stylesheet" href="../fonts/poppins.css">

@@ -1,0 +1,39 @@
+h1,h2,h3,h4,h5,h6,p,label,button,th{
+    font-family: fantasy !important;
+  	padding: 0.5rem 0.5rem;
+    font-weight: 100;
+	letter-spacing: 0.02rem;
+
+}
+li a{
+      font-family: fantasy !important;
+    font-weight: 100;
+}
+span.info-box-icon:hover{
+	box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23)!important;
+}
+a.btn-sm:hover{
+	box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23)!important;
+}
+li{
+	font-family: fantasy !important;
+  font-weight: 100;
+
+}
+nav.mt-2 ul.nav-sidebar li i{
+	color:rgb(64,69,79) !important;
+}
+nav.mt-2 ul.nav-sidebar li p{
+	color:rgb(64,69,79) !important;
+}
+nav.mt-2 ul.nav-sidebar li a:hover{
+	color:rgb(64,69,79) !important;
+}
+
+h1.txt-color {
+  color: rgb(48,133,142) !important;
+ 
+ }
+ .info-box{
+ 	margin: ;
+ }
