@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <option value="client">Client</option>
                                                 <option value="admin">Admin</option>
                                                 <option value="staff">Staff</option>
-                                                <option value="student">Student</option>
+                                               
                                                 <?php foreach ($roles as $role): ?>
                                                     <option value="<?php echo htmlspecialchars($role['role_name']); ?>"><?php echo htmlspecialchars($role['role_name']); ?></option>
                                                 <?php endforeach; ?>

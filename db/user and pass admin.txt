@@ -3,7 +3,12 @@ Username: admin-01
 Password: adminpass123
 
 Client-
-Username: testuser
-Password: testpassword
+Username: B-01001
+Password: password123
+
+Staff-
+Username: staff-01
+Password: regpass123
+
 
 databse name: cisa

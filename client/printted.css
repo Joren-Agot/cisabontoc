@@ -1,0 +1,54 @@
+/* Styles go here */
+
+/* Hide header and footer by default on screen */
+.page-header, .page-footer {
+  display: none;
+}
+
+/* Set header and footer layout */
+.page-header, .page-header-space {
+  height: 100px;
+}
+
+.page-footer, .page-footer-space {
+  height: 50px;
+}
+
+/* Header and Footer for Printing */
+@media print {
+  .page-header, .page-footer {
+    display: block;
+    position: fixed;
+  }
+
+  .page-header {
+    top: 20px;
+    width: 50%;
+    margin-left: 180px;
+    background-image: url('../core/assets/images/slsu/mp_slsu.png'); /* Replace with the actual header image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .page-footer {
+    bottom: 0;
+    width: 20%;
+    background-image: url('../core/assets/images/slsu/mp_slsu3.png'); /* Replace with the actual footer image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+
+  button { display: none; }
+
+  body { margin: 0; }
+}
+
+@page {
+  margin: 20mm;
+}
+

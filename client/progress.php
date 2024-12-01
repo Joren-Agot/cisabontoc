@@ -19,9 +19,9 @@ if ($_SESSION['role'] !== 'client') {
 
     .card {
         min-height: 250px;
-        border: 1px solid gray; /* Add border with color */
-        border-radius: 10px; /* Optional: Add rounded corners */
-        padding: 10px; /* Optional: Add padding inside the card */
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     .progress-container {
@@ -32,15 +32,16 @@ if ($_SESSION['role'] !== 'client') {
     }
 
     .progress {
-        height: 2px;
+        height: 5px;
         width: 100%;
+        left: 10px;
         background-color: #e9ecef;
         position: relative;
     }
 
     .progress-bar {
-        height: 2px;
-        background-color: #3498db;
+        height: 5px;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
         width: 0%;
         transition: width 0.3s ease;
         position: absolute;
@@ -54,6 +55,7 @@ if ($_SESSION['role'] !== 'client') {
         width: 100%;
         top: -12px;
         display: flex;
+        left: -10px;
         justify-content: space-between;
     }
 
@@ -82,57 +84,76 @@ if ($_SESSION['role'] !== 'client') {
         margin-top: 5px;
     }
 
-    /* Small screen adjustments */
-    @media (max-width: 768px) {
-        .progress-container {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .progress {
-            width: 2px;
-            height: 100%;
-            background-color: #e9ecef;
-            margin: 0 auto;
-        }
-
-        .progress-bar {
-            width: 2px;
-            height: 0%;
-            background-color: #3498db;
-            transition: height 0.3s ease;
-        }
-
-        .status-buttons {
-            flex-direction: column;
-            position: relative;
-            top: 0;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .status-button-container {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-        }
-
-        .indicator {
-            margin-left: 15px;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        /* Adjust the second indicator to stack vertically */
-        .indicator-2 {
-            margin-left: -110px; /* Remove left margin */
-            margin-top: 20px; /* Add top margin to push it below the button */
-        }
-
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    .progress-container {
+        flex-direction: column;
+        align-items: center;
     }
-</style>
 
-</head>
+.progress {
+    width: 80%; /* Keep it at 100% width */
+    height: 5px; /* Keep the height consistent */
+    background-color: #e9ecef;
+    margin: 0 auto;
+    transform: rotate(90deg);
+    transform-origin: left center; /* Adjust rotation point to keep it aligned */
+    top: -5px;
+    left: -33px; /* Ensure it doesn't go out of the card */
+}
+
+
+    .progress-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #3498db;
+        transition: width 0.3s ease;
+    }
+
+    .status-buttons {
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .status-button-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+/* Ensure indicator 1 and 2 are in separate rows */
+.indicator-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column; /* Arrange the indicators in a vertical column */
+    margin-bottom: 10px; /* Add space between rows */
+    position: relative; /* Make the container relative for absolute positioning */
+}
+
+.indicator {
+    margin-left: 15px;
+    text-align: left;
+    width: 100%; /* Ensure it fits within the container */
+    margin-bottom: 35px; /* Space between indicator 1 and 2 */
+}
+
+.indicator-2 {
+    position: absolute; /* Make it independent of the flow */
+    text-align: left;
+    left: 0; /* Adjust this value to align it to the left side */
+    top: -20%; /* Position it below the first indicator */
+    margin-left: 40px; /* Adjust for fine-tuning */
+    width: 200%; /* Ensure it fits within the container */
+    margin-bottom: 0px; /* Space below the second indicator */
+    margin-top: 40px; /* Add top margin if you want */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+}
+
+
+</style>
 
 <?php include '../core/partials/body.php'; ?>
 
@@ -144,74 +165,77 @@ if ($_SESSION['role'] !== 'client') {
             <div class="container-fluid">
                 <?php includeFileWithVariables('../core/partials/page-title.php', array('pagetitle' => 'CLIENT', 'title' => 'REQUEST PROGRESS')); ?>
 
-                
-                                        <?php
-                                        $current_user_id = $_SESSION['client_id'];
-                                        // Update query to exclude 'Done' status and limit the result to one request
-$sql = "SELECT wr.id, wr.status, wr.requesting_dept, wr.work_requested, wr.date_of_req, wr.action_taken, wr.approved_date, wr.processed_date, ci.first_name, ci.middle_name, ci.last_name
-        FROM work_requests wr
-        LEFT JOIN admin_info ci ON wr.cisa_head_id = ci.admin_id
-        WHERE wr.client_id = ? AND wr.status NOT IN ('Done', 'Declined')
-        LIMIT 1";
+                <?php
+                $current_user_id = $_SESSION['client_id'];
 
-                        $stmt = $conn->prepare($sql);
-                        $stmt->bind_param("i", $current_user_id);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
+                $sql = "SELECT wr.id, wr.status, wr.requesting_dept, wr.work_requested, wr.date_of_req, wr.action_taken, wr.approved_date, wr.processed_date, ci.first_name, ci.middle_name, ci.last_name
+                        FROM work_requests wr
+                        LEFT JOIN admin_info ci ON wr.cisa_head_id = ci.admin_id
+                        WHERE wr.client_id = ? AND wr.status NOT IN ('Done', 'Declined')
+                        LIMIT 1";
 
-                                        $statuses = ["Pending" => 1, "Approved" => 2, "Processed" => 3, "Delivered" => 4];
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("i", $current_user_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
 
-                                        if ($row = $result->fetch_assoc()):
-                                            $status = $row['status'];
-                                            $progress_level = $statuses[$status] ?? 0;
-                                            $progress_width = ($progress_level / 4) * 100;
-                                        ?>
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">OVERALL PROGRESS:</h5>
-        <div class="progress-container">
-            <div class="progress">
-                <div class="progress-bar" style="width: <?php echo $progress_width; ?>%;"></div>
-            </div>
-            <div class="status-buttons">
-                <!-- First Indicator with Uppercase Text -->
-                <div class="status-button-container">
-                    <button class="btn btn-sm <?php echo ($progress_level >= 1) ? 'btn-primary' : 'btn-secondary'; ?> rounded-pill status-button" style="border: 2px solid <?php echo ($progress_level >= 1) ? '#007b8c' : '#adb5bd'; ?>;">1</button>
-                    <div class="indicator" style="color: <?php echo ($progress_level >= 1) ? '#00e0ce' : '#6c757d'; ?>;">WORK REQUEST</div>
-                    <div class="indicator-2">Request Date: <span style="color: red;"><?php echo date("Y-m-d", strtotime($row['date_of_req'])); ?></span></div>
+                $statuses = ["Pending" => 1, "Approved" => 2, "Processed" => 3, "Delivered" => 4];
+
+                if ($row = $result->fetch_assoc()):
+                    $status = $row['status'];
+                    $progress_level = $statuses[$status] ?? 0;
+               $progress_width = 0;
+
+                if ($progress_level == 1) {
+                    // For Pending, set a minimal progress (e.g., 10%)
+                    $progress_width = 5;
+                } elseif ($progress_level == 2) {
+                    // For Approved, set a mid-level progress (e.g., 50%)
+                    $progress_width = 35;
+                } else {
+                    // For other statuses, calculate the progress as usual
+                    $progress_width = (($progress_level - 1) / (count($statuses) - 1)) * 100;
+                }
+
+                ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">OVERALL PROGRESS:</h5>
+                        <div class="progress-container">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: <?php echo $progress_width; ?>%;"></div>
+                            </div>
+                            <div class="status-buttons">
+                                <?php
+                                $indicators = [
+                                    1 => ['text' => 'WORK REQUEST', 'date_field' => 'date_of_req'],
+                                    2 => ['text' => 'APPROVED BY CISA', 'date_field' => 'approved_date'],
+                                    3 => ['text' => 'PROCESSED', 'date_field' => 'processed_date'],
+                                    4 => ['text' => 'DELIVERED', 'date_field' => null],
+                                ];
+                                foreach ($indicators as $level => $indicator) {
+                                    $is_active = $progress_level >= $level;
+                                    $btn_class = $is_active ? 'btn-primary' : 'btn-secondary';
+                                    $border_color = $is_active ? '#007b8c' : '#adb5bd';
+                                    $text_color = $is_active ? '#00e0ce' : '#6c757d';
+                                    $date_text = $indicator['date_field'] && $row[$indicator['date_field']] ? date("Y-m-d", strtotime($row[$indicator['date_field']])) : 'Not Available';
+                                ?>
+                                <div class="status-button-container">
+                                    <button class="btn btn-sm <?php echo $btn_class; ?> rounded-pill status-button" style="border: 2px solid <?php echo $border_color; ?>;"><?php echo $level ; ?></button>
+                                    <div class="indicator" style="color: <?php echo $text_color; ?>;"><?php echo $indicator['text']; ?></div>
+                                    <?php if ($indicator['date_field']) { ?>
+                                    <div class="indicator-2"><?php echo ucfirst(str_replace('_', ' ', $indicator['date_field'])); ?>: <span style="color: red;"><?php echo $date_text; ?></span></div>
+                                    <?php } ?>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Second Indicator -->
-                <div class="status-button-container">
-                    <button class="btn btn-sm <?php echo ($progress_level >= 2) ? 'btn-primary' : 'btn-secondary'; ?> rounded-pill status-button" style="border: 2px solid <?php echo ($progress_level >= 2) ? '#007b8c' : '#adb5bd'; ?>;">2</button>
-                    <div class="indicator" style="color: <?php echo ($progress_level >= 2) ? '#00e0ce' : '#6c757d'; ?>;">APPROVED BY CISA</div>
-                    <div class="indicator-2">Date of Approval: <span style="color: red;">
-                        <?php echo ($row['approved_date']) ? date("Y-m-d", strtotime($row['approved_date'])) : "Not Available"; ?>
-                    </span></div>
-                </div>
-
-                <!-- Third Indicator -->
-                <div class="status-button-container">
-                    <button class="btn btn-sm <?php echo ($progress_level >= 3) ? 'btn-primary' : 'btn-secondary'; ?> rounded-pill status-button" style="border: 2px solid <?php echo ($progress_level >= 3) ? '#007b8c' : '#adb5bd'; ?>;">3</button>
-                    <div class="indicator" style="color: <?php echo ($progress_level >= 3) ? '#00e0ce' : '#6c757d'; ?>;">PROCESSED</div>
-                    <div class="indicator-2">Date of Processed: <span style="color: red;">
-                        <?php echo ($row['processed_date']) ? date("Y-m-d", strtotime($row['processed_date'])) : "Not Available"; ?>
-                    </span></div>
-                </div>
-
-                <!-- Fourth Indicator -->
-                <div class="status-button-container">
-                    <button class="btn btn-sm <?php echo ($progress_level >= 4) ? 'btn-primary' : 'btn-secondary'; ?> rounded-pill status-button" style="border: 2px solid <?php echo ($progress_level >= 4) ? '#007b8c' : '#adb5bd'; ?>;">4</button>
-                    <div class="indicator" style="color: <?php echo ($progress_level >= 4) ? '#00e0ce' : '#6c757d'; ?>;">DELIVERED</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
                 <?php endif; ?>
+  
+
 
                 <div class="row">
                     <!-- First Card with Form Fields (Split into Two Columns) -->
@@ -263,13 +287,13 @@ $sql = "SELECT wr.id, wr.status, wr.requesting_dept, wr.work_requested, wr.date_
 <div class="col-md-4">
     <div class="card mb-4">
         <div class="card-body">
-            <form action="rate.php" method="POST">
+            <form action="rate.php" method="">
                 <h5>Request Information</h5>
                 <p>Status: <?php echo isset($status) ? htmlspecialchars($status) : 'N/A'; ?></p>
 
                 <?php if ($status === 'Delivered'): ?>
                     <!-- Form for 'Delivered' status with action to rate.php -->
-                    <button type="submit" name="action" value="proceed" class="btn btn-success btn-block">Proceed</button>
+                    <button type="submit" name="action" value="go" class="btn btn-success btn-block">Proceed</button>
                 </form>
                 <?php endif; ?>
         </div>

@@ -6,3 +6,6 @@
 <link href="../core/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
 <link href="../core/assets/fonts/poppins.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../core/new style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+

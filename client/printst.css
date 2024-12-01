@@ -1,0 +1,56 @@
+/* Styles for page layout */
+
+.page-header, .page-header-space {
+  height: 100px;
+}
+
+.page-footer, .page-footer-space {
+  height: 50px;
+}
+        .main-content {
+            background-color: #ffffff; /* Background color for the entire content wrapper */
+            border-radius: 8px;
+            padding: 20px; /* Adjust padding as needed */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+            margin-top: 20px; /* Adjust margin-top for space from navbar */
+            margin-left: 3px;
+            margin-right: 1px;
+        }
+
+.page-header {
+  position: fixed;
+  top: 20px;
+  width: 50%;
+  margin-left: 180px;
+  background-image: url('../core/assets/images/slsu/mp_slsu.png'); /* Replace with the actual header image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 20%;
+  background-image: url('../core/assets/images/slsu/mp_slsu3.png'); /* Replace with the actual footer image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page {
+  page-break-after: always;
+}
+
+@page {
+  margin: 20mm;
+}
+
+@media print {
+  thead {display: table-header-group;} 
+  tfoot {display: table-footer-group;}
+  
+  button {display: none;}
+  
+  body {margin: 0;}
+}

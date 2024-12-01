@@ -199,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <head>
         
-    <?php includeFileWithVariables('../core/partials/title-meta.php', array('title' => 'Dashboard')); ?>
         
         <!-- jvectormap -->
         <link href="../core/assets/libs/jqvmap/jqvmap.min.css" rel="stylesheet" />
@@ -224,59 +223,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="page-content">
                     <div class="container-fluid">
 
-                        <?php includeFileWithVariables('../core/partials/page-title.php', array('pagetitle' => 'Upzet' , 'title' => 'Dashboard')); ?>
-                       
+                        <?php includeFileWithVariables('../core/partials/page-title.php', array('pagetitle' => 'Upzet' , 'title' => 'MIS MAINTENANCE')); ?>
+      <?php include 'client-assets/m_style.php'; ?>                 
 
 
 
-            <!-- Content wrapper -->
-    <div class="content-wrapper">
-        <!-- Content -->
-<div id="inputDetailsModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Input Details</h2>
-        <textarea id="inputDetailsTextArea" placeholder="Enter details..."></textarea>
-        <button id="saveInputDetailsBtn">Save</button>
-    </div>
-</div>
-
-        <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="text-muted fw-light">CISA/</span>MIS MAINTENANCE</h4>
-            <div class="row">
-                <div class="col-xxl">
-                <div class=" mb-4">
-                    <div class="card">
-                        <div class="card-body">
-<div class="card">
-    <form method="post" action="">
-        <div class="card-body position-relative">
-            <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-header mb-0">Desktop/Laptop Maintenance</h5>
-                <div class="d-flex align-items-center position-relative">
-                                        <!-- Toast Notification Template -->
-                    <div id="toast"  class="bs-toast toast show bg-primary" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                        <div class="toast-header">
-                            <strong class="me-auto">Notification</strong>
-                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                    <!-- Content wrapper -->
+                            <div class="content-wrapper">
+                                <!-- Content -->
+                        <div id="inputDetailsModal" class="modal">
+                            <div class="modal-content">
+                                <textarea id="inputDetailsTextArea" placeholder="Enter details..."></textarea>
+                                <button id="saveInputDetailsBtn">Save</button>
+                            </div>
                         </div>
-                        <div class="toast-body">
-                            💡Please save the inputed information first before proceeding to the task.
-                        </div>
-                    </div>
-                    <i id="icon" class="menu-icon bx bx-message-error bx-tada-hover me-2 flipped-icon"></i>
-                    <button id="saveBtn" type="submit" class="btn btn-primary">Save Info</button>
 
-                </div>
-            </div>
-        </div>
-</div>
+                                <div class="container-xxl flex-grow-1 container-p-y">
+                                    <div class="row">
+                                        <div class="col-xxl">
+                                        <div class=" mb-4">
+                                            <div class="card">
+                                                <div class="card-body">
+             
+                            <form method="post" action="">
+                                <div class="card-body position-relative">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-header mb-0">Desktop/Laptop Maintenance</h5>
+                                        <div class="d-flex align-items-center position-relative">
+                                                                <!-- Toast Notification Template -->
+                                            <i id="icon" class="menu-icon bx bx-message-error bx-tada-hover me-2 flipped-icon"></i>
+                                            <button id="saveBtn" type="submit" class="btn btn-primary">Save Info</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                
 
 
                                 <div class="table-responsive text-nowrap">
                             <table class="table table-bordered" style="max-width: 100%; table-layout: auto; word-wrap: break-word; white-space: normal;">
                                 <thead>
-                                    <tr class="item-rowed">
+                                    <tr class="item-row">
                                         <th>Title:</th>
                                         <th colspan="4">Desktop/Laptop Maintenance</th>
                                         <th colspan="5">Frequency: Yearly</th>
@@ -756,1096 +743,1096 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </tr>
                                         <tr id="row10" class="disabled-row">
                                             <td colspan="5">HardDisk</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="10" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="10" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="10" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="10" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="10" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="10" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                         <tr id="row11" class="disabled-row">
                                             <td colspan="5">DVD or CD/RW-drive firmware up-to-date</td>                 
-                                            <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="11" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="11" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="11" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="11" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="11" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="11" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        </tr>
+                                        </div>
+                                    </td>
+                                </tr>
 
                                         <tr id="row12" class="disabled-row">
                                             <td colspan="5">Memory is O.K</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="12" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="12" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="12" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="12" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="12" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="12" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                         <tr id="row13" class="disabled-row">
                                             <td colspan="5">For Laptop: battery run-time is norm</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="13" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="13" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="13" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="13" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="13" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="13" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                         <tr id="row14" class="disabled-row">
                                             <td>5.</td>
                                             <td>Browser/Proxy Settings</td>
                                             <td colspan="5">Verify proper settings and operation</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="14" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="14" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="14" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="14" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="14" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="14" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row15" class="disabled-row">
                                             <td>6.</td>
                                             <td>Proper Software loads</td>
                                             <td colspan="5">Required software is installed and operating</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="15" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="15" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="15" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="15" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="15" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="15" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row16" class="disabled-row">
                                             <td rowspan="2">7.</td>
                                             <td rowspan="2">Viruses, and malware</td>
                                             <td colspan="5">Anti-virus installed</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="16" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="16" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="16" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="16" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="16" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="16" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row17" class="disabled-row">
                                             <td colspan="5">Virus scan done</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="17" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="17" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="17" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="17" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="17" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="17" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row18" class="disabled-row">
                                             <td rowspan="4">8.</td>
                                             <td rowspan="4">Clearance</td>
                                             <td colspan="5">Unused software removed</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="18" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="18" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="18" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="18" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="18" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="18" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row19" class="disabled-row">
                                             <td colspan="5">Temporary files removed</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="19" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="19" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="19" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="19" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="19" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="19" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row20" class="disabled-row">
                                             <td colspan="5">Recycle Bin and caches emptied</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="20" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="20" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="20" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="20" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="20" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="20" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row21" class="disabled-row">
                                             <td colspan="5">Periphery devices clean</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="21" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="21" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="21" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="21" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="21" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="21" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row22" class="disabled-row">
                                             <td rowspan="5">9.</td>
                                             <td rowspan="5">Interiors, and cleaning</td>
                                             <td colspan="5">Dust removed</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="22" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="22" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="22" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="22" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="22" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="22" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row23" class="disabled-row">
                                             <td colspan="5">No loose parts</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="23" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="23" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="23" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="23" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="23" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="23" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr  id="row24" class="disabled-row">
                                             <td colspan="5">Airflow is O.K.</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="24" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="24" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="24" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="24" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="24" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="24" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row25" class="disabled-row">
                                             <td colspan="5">Cables unplugged and re-plugged</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="25" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="25" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="25" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="25" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="25" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="25" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row26" class="disabled-row">
                                             <td colspan="5">Fans are operating</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="26" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="26" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="26" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="26" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="26" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="26" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row27" class="disabled-row">
                                             <td rowspan="7">10.</td>
                                             <td rowspan="7">Peripheral Devices</td>
                                             <td colspan="5">Mouse</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="27" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="27" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="27" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="27" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="27" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="27" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row28" class="disabled-row">
                                             <td colspan="5">Keyboard</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="28" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="28" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="28" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="28" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="28" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="28" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row29" class="disabled-row">
                                             <td colspan="5">Monitor</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="29" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="29" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="29" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="29" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="29" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="29" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row30" class="disabled-row">
                                             <td colspan="5">UPS</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="30" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="30" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="30" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="30" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="30" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="30" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row31" class="disabled-row">
                                             <td colspan="5">Printer</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="31" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="31" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="31" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="31" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="31" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="31" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row32" class="disabled-row">
                                             <td colspan="5">Telephone Extension</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="32" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="32" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="32" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="32" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="32" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="32" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr id="row33" class="disabled-row">
                                             <td colspan="5">FAX</td>
-                                        <td data-status="ok" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                    <td id="ok" data-row="33" data-cell="ok" data-status="ok" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="33" data-cell="ok" data-color="#8BC34A" href="#"><span style="background-color: #8BC34A;" class="color-badge"></span>Select OK</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="repair" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="repair" data-row="33" data-cell="repair" data-status="repair" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="33" data-cell="repair" data-color="#FF5722" href="#"><span style="background-color: #FF5722;" class="color-badge"></span>Select Repair</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td data-status="na" class="status-cell">
-                                            <div class="status-content">
-                                                <div class="dropdown">
-                                                    <button class="dropdown-toggle" type="button">
-                                                        <i class="fas fa-caret-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu color-dropdown">
-                                                        <a class="dropdown-item select-color" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
-                                                        <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
-                                                        <a class="dropdown-item remove-color" href="#">❌ Remove</a>
-                                                    </div>
+                                        </div>
+                                    </td>
+                                    <td id="na" data-row="33" data-cell="na" data-status="na" class="status-cell">
+                                        <div class="status-content">
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button">
+                                                    <i class="fas fa-caret-down"></i>
+                                                </button>
+                                                <div class="dropdown-menu color-dropdown">
+                                                    <a class="dropdown-item select-color" data-row="33" data-cell="na" data-color="#607D8B" href="#"><span style="background-color: #607D8B;" class="color-badge"></span>Select N/A</a>
+                                                    <a class="dropdown-item input-details disabled" href="#">📄 Details</a>
+                                                    <a class="dropdown-item remove-color" href="#">❌ Remove</a>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </div>
+                                    </td>
                                     </tr>
                                         <tr>
                                             <td></td>

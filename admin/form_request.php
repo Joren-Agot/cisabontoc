@@ -171,7 +171,7 @@
                                                     <input type="text" class="form-control field-input d-none" value="<?php echo $descriptionOfWorkRequest; ?>">
                                                 </li>
                                             </ul>
-                                            <a href="#" class="btn btn-success action-link" onclick="toggleEditable(this)" data-request-id="<?php echo $row['id']; ?>">Edit</a>
+                                            
 
                                             <div class="btn-group ms-2">
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -233,8 +233,8 @@
                                                 <input type="text" class="form-control field-input d-none" value="<?php echo $workRequested; ?>">
                                             </li>
                                         </ul>
-                                        <a href="#" class="btn btn-success action-link" onclick="toggleEditable(this)" data-request-id="<?php echo $jobOrderId; ?>">Edit</a>
-                                        <a href="#" class="btn btn-success action-link" onclick="updateRequest(<?php echo $row['id']; ?>)">Update</a>
+                                       
+             
 
                                         <div class="btn-group ms-2">
                                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

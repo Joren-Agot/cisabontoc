@@ -50,7 +50,7 @@
 
   <style>
     body {
-      text-align: center;
+
     }
 
     div#editor {

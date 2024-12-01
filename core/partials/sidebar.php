@@ -96,6 +96,20 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="../client/maintenance2.php" class=" waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>Maintenance</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../client/monthly_accomplishment.php" class=" waves-effect">
+                        <i class="mdi mdi-calendar-outline"></i>
+                        <span>Monthly Accomplishment Report</span>
+                    </a>
+                </li>
+
                 <?php endif; ?>
              <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === "staff"): ?>
                 <li>

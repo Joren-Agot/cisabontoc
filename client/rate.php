@@ -1,82 +1,89 @@
-
 <?php include '../core/partials/main.php'; ?>
 <?php
 require_once '../core/partials/config.php';
 session_start();
 $userId = $_SESSION['client_id'];
 
-// Data from the form (use POST or GET as per your form method)
-$control_no = $_POST['control_no'] ?? null;
-$client_type = isset($_POST['client_type']) ? implode(',', $_POST['client_type']) : null; // Fix for multi-checkbox field
-$date = $_POST['date'] ?? null;
-$sex = $_POST['sex'] ?? null;
-$age = $_POST['age'] ?? null;
-$region_of_residence = $_POST['region_of_residence'] ?? null;
-$service_availed = $_POST['service_availed'] ?? null;
-$cc1 = isset($_POST['cc1']) ? implode(',', $_POST['cc1']) : null; // Multiple checkboxes
-$cc2 = isset($_POST['cc2']) ? implode(',', $_POST['cc2']) : null;
-$cc3 = isset($_POST['cc3']) ? implode(',', $_POST['cc3']) : null;
+// Check if action is set (e.g., proceed action from the link)
+$action = $_GET['action'] ?? null;
 
-try {
-    // SQL query with placeholders
-    $sql = "INSERT INTO client_feedback 
-            (control_no, client_type, date, sex, age, region_of_residence, service_availed, cc1, cc2, cc3) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+if ($action === 'proceed') {
+    // Data from the form (use POST or GET as per your form method)
+    $control_no = $_POST['control_no'] ?? null;
+    $client_type = isset($_POST['client_type']) ? implode(',', $_POST['client_type']) : null; // Fix for multi-checkbox field
+    $date = $_POST['date'] ?? null;
+    $sex = $_POST['sex'] ?? null;
+    $age = $_POST['age'] ?? null;
+    $region_of_residence = $_POST['region_of_residence'] ?? null;
+    $service_availed = $_POST['service_availed'] ?? null;
+    $cc1 = isset($_POST['cc1']) ? implode(',', $_POST['cc1']) : null; // Multiple checkboxes
+    $cc2 = isset($_POST['cc2']) ? implode(',', $_POST['cc2']) : null;
+    $cc3 = isset($_POST['cc3']) ? implode(',', $_POST['cc3']) : null;
 
-    // Prepare the statement
-    $stmt = $conn->prepare($sql);
+    try {
+        // SQL query with placeholders to insert feedback
+        $sql = "INSERT INTO client_feedback 
+                (control_no, client_type, date, sex, age, region_of_residence, service_availed, cc1, cc2, cc3) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    if ($stmt === false) {
-        throw new Exception($conn->error);
-    }
+        // Prepare the statement
+        $stmt = $conn->prepare($sql);
 
-    // Bind parameters to the statement
-    $stmt->bind_param(
-        'ssssisssss', 
-        $control_no,
-        $client_type,
-        $date,
-        $sex,
-        $age,
-        $region_of_residence,
-        $service_availed,
-        $cc1,
-        $cc2,
-        $cc3
-    );
-
-    // Execute the query
-    if ($stmt->execute()) {
-        // Successfully inserted into client_feedback, now update the status of the user's work request
-        $updateSql = "UPDATE work_requests SET status = 'Done' WHERE client_id = ? AND status = 'Delivered'";
-        $updateStmt = $conn->prepare($updateSql);
-
-        if ($updateStmt === false) {
+        if ($stmt === false) {
             throw new Exception($conn->error);
         }
 
-        // Bind the client ID for the update query
-        $updateStmt->bind_param('i', $userId);
+        // Bind parameters to the statement
+        $stmt->bind_param(
+            'ssssisssss', 
+            $control_no,
+            $client_type,
+            $date,
+            $sex,
+            $age,
+            $region_of_residence,
+            $service_availed,
+            $cc1,
+            $cc2,
+            $cc3
+        );
 
-        // Execute the update query
-        if ($updateStmt->execute()) {
-            echo "Feedback submitted and status updated to 'Done'.";
+        // Execute the query
+        if ($stmt->execute()) {
+            // Successfully inserted into client_feedback, now update the status of the user's work request
+            $updateSql = "UPDATE work_requests SET status = 'Done' WHERE client_id = ? AND status = 'Delivered'";
+            $updateStmt = $conn->prepare($updateSql);
+
+            if ($updateStmt === false) {
+                throw new Exception($conn->error);
+            }
+
+            // Bind the client ID for the update query
+            $updateStmt->bind_param('i', $userId);
+
+            // Execute the update query
+            if ($updateStmt->execute()) {
+                echo "Feedback submitted and status updated to 'Done'.";
+            } else {
+                echo "Error updating status: " . $updateStmt->error;
+            }
+
+            // Close the update statement
+            $updateStmt->close();
         } else {
-            echo "Error updating status: " . $updateStmt->error;
+            echo "Error: " . $stmt->error;
         }
 
-        // Close the update statement
-        $updateStmt->close();
-    } else {
-        echo "Error: " . $stmt->error;
+        // Close the insert statement
+        $stmt->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    // Close the insert statement
-    $stmt->close();
-} catch (Exception $e) {
-    echo "Error: " . $e->getMessage();
+} else {
+    echo "No action specified.";
 }
 ?>
+
 
     <head>
         
@@ -384,7 +391,7 @@ try {
     <td class="tg-0pky"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"><span style="font-weight:bold">SQD1</span>. I spent a reasonable amount of time for my transaction.</td>
+    <td class="tg-0pky"><span style="font-weight:bold">SQD1</span>. I spent a reasonable amount of time for my transaction's requirements and steps based on information provided.</td>
     <td class="tg-c3ow star-cell"><span class="star" data-value="1">&#9733;</span></td>
     <td class="tg-c3ow star-cell"><span class="star" data-value="2">&#9733;</span></td>
     <td class="tg-c3ow star-cell"><span class="star" data-value="3">&#9733;</span></td>
@@ -505,16 +512,27 @@ try {
                     timer: 2000, // Display the message for 2 seconds
                     showConfirmButton: false // Hide the confirm button
                 }).then(() => {
-                    // Submit the form after the success message is shown
-                    document.querySelector('form').submit();
+                    // Add the action parameter before submitting the form
+                    const form = document.querySelector('form');
+                    const actionInput = document.createElement('input');
+                    actionInput.type = 'hidden';
+                    actionInput.name = 'action';
+                    actionInput.value = 'proceed'; // Set the action value to proceed
+                    form.appendChild(actionInput);
 
-                    // Redirect to another page after the success message
-                    window.location.href = 'work_request.php'; // Change this to your desired redirect page
+                    // Submit the form
+                    form.submit();
                 });
+
+                // Redirect to the desired page after 2 seconds (after SweetAlert message disappears)
+                setTimeout(function() {
+                    window.location.href = 'work_request.php'; // Redirect to work_request.php
+                }, 2000); // 2 seconds after the success message disappears
             }
         });
     });
 </script>
+
 
 </body>
 </html>
